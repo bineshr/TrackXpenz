@@ -216,6 +216,16 @@ namespace DailyExpenseBL.Authentication
             }
             _db.SaveChanges();
         }
+        public void RemoveFriend(int userId,int friendId)
+        {
+            var frnd = _db.FriendsLists.Where(a => a.FriendId == friendId && a.UserId == userId).FirstOrDefault();
+            if (frnd != null)
+            {
+                frnd.Active = 0;
+                frnd.Updated_on = DateTime.Now;
+                _db.SaveChanges();
+            }
+        }
         public List<User> GetUserProfile(int UserId)
         {
             List<User> usrProfile = new List<User>();

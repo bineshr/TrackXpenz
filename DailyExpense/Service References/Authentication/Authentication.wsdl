@@ -109,6 +109,12 @@
   <wsdl:message name="IAuthentication_SendInviteEmail_OutputMessage">
     <wsdl:part name="parameters" element="tns:SendInviteEmailResponse" />
   </wsdl:message>
+  <wsdl:message name="IAuthentication_RemoveFriend_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveFriend" />
+  </wsdl:message>
+  <wsdl:message name="IAuthentication_RemoveFriend_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveFriendResponse" />
+  </wsdl:message>
   <wsdl:portType name="IAuthentication">
     <wsdl:operation name="SaveUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IAuthentication/SaveUser" message="tns:IAuthentication_SaveUser_InputMessage" />
@@ -177,6 +183,10 @@
     <wsdl:operation name="SendInviteEmail">
       <wsdl:input wsaw:Action="http://tempuri.org/IAuthentication/SendInviteEmail" message="tns:IAuthentication_SendInviteEmail_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAuthentication/SendInviteEmailResponse" message="tns:IAuthentication_SendInviteEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveFriend">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthentication/RemoveFriend" message="tns:IAuthentication_RemoveFriend_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthentication/RemoveFriendResponse" message="tns:IAuthentication_RemoveFriend_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IAuthentication" type="tns:IAuthentication">
@@ -327,6 +337,15 @@
     </wsdl:operation>
     <wsdl:operation name="SendInviteEmail">
       <soap:operation soapAction="http://tempuri.org/IAuthentication/SendInviteEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveFriend">
+      <soap:operation soapAction="http://tempuri.org/IAuthentication/RemoveFriend" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -78,5 +78,9 @@ namespace DailyExpenseBL.Authentication
         {
             dataAccess.SendInviteEmail(emailId, currentUser);
         }
+        public void RemoveFriend(int userId, int friendId)
+        {
+            dataAccess.RemoveFriend(userId, friendId);
+        }
     }
 }

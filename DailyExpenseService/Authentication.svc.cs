@@ -235,5 +235,17 @@ namespace DailyExpenseService
                 WebOperationContext.Current.OutgoingResponse.StatusDescription = e.Message;
             }
         }
+        public void RemoveFriend(int userId, int friendId)
+        {
+            try
+            {
+                _authentication.RemoveFriend(userId, friendId);
+            }
+            catch (Exception e)
+            {
+                WebOperationContext.Current.OutgoingResponse.StatusCode = HttpStatusCode.PreconditionFailed;
+                WebOperationContext.Current.OutgoingResponse.StatusDescription = e.Message;
+            }
+        }
     }
 }

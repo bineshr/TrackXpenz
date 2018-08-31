@@ -47,5 +47,7 @@ namespace DailyExpenseService
 
         [OperationContract]
         void SendInviteEmail(string emailId, string currentUser);
+        [OperationContract]
+        void RemoveFriend(int userId, int friendId);
     }
 }

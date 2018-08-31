@@ -233,29 +233,7 @@
                         </div>
 
                         <div class="tab-pane" id="friends">
-                            <div class="row" style="margin:5px;">
-                                @{ 
-                                    foreach (var frnds in Model.Friends)
-                                    {
-                                        <div class="col-lg-3 col-xs-6" style="width:45%;border:1px solid #0094ff; margin:5px;">
-                                    <!-- small box -->
-                                    <div>
-                                        <div class="frndsimg" style="float:left;">
-                                            <img class="profile-user-img img-responsive img-circle" src="~/Images/AdminLTE/avatar5.png" alt="User profile picture">
-                                        </div>
-                                        <div class="frnds-content">
-                                            <p><strong>Name: </strong>@frnds.Name</p>
-                                            <p><strong>Email: </strong>@frnds.EmailId</p>
-                                            <p><strong>Loaction: </strong>@frnds.Location</p>
-                                        </div>
-                                        <button class="btn btn-primary bg-red" style="float:right">Remove Friend</button>
-                                    </div>
-                                </div>
-                                    }
-                                }
-                                
-
-                            </div>
+                          @Html.Partial("_LoadUserFriends",Model.Friends)
                             <button class="btn btn-primary" style="float:right" id="btnInvitefrnd" data-toggle="modal" data-target="#inviteFriend">Invite Friend</button>
 
                         </div>

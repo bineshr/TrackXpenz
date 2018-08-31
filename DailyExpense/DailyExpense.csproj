@@ -395,6 +395,7 @@
     <Content Include="Views\Expense\_LoadExpenseByDate.cshtml" />
     <Content Include="Views\Expense\TripDetails.cshtml" />
     <Content Include="Views\Expense\_LoadTripHistory.cshtml" />
+    <Content Include="Views\Home\_LoadUserFriends.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

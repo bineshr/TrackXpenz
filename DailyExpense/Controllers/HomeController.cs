@@ -221,6 +221,12 @@ namespace DailyExpense.Controllers
             authentication.UpdateProfile(Convert.ToInt32(Session["UserId"].ToString()), firstname, lastname, countryId, mobileNo, status);
             return JsonResponse(true);
         }
+        public JsonResult RemoveFriend(int friendId)
+        {
+            AuthenticationClient authentication = new AuthenticationClient();
+            authentication.RemoveFriend(Convert.ToInt32(Session["UserId"].ToString()), friendId);
+            return JsonResponse(true);
+        }
         public JsonResult GetChartByProductName()
         {
            

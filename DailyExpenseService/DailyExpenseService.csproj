@@ -98,6 +98,7 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\DailyExpenseService.pubxml" />
+    <None Include="Properties\PublishProfiles\TrackXpenzService.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

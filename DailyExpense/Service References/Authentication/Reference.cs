@@ -116,6 +116,12 @@ namespace DailyExpense.Authentication {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthentication/SendInviteEmail", ReplyAction="http://tempuri.org/IAuthentication/SendInviteEmailResponse")]
         System.Threading.Tasks.Task SendInviteEmailAsync(string emailId, string currentUser);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthentication/RemoveFriend", ReplyAction="http://tempuri.org/IAuthentication/RemoveFriendResponse")]
+        void RemoveFriend(int userId, int friendId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthentication/RemoveFriend", ReplyAction="http://tempuri.org/IAuthentication/RemoveFriendResponse")]
+        System.Threading.Tasks.Task RemoveFriendAsync(int userId, int friendId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -279,6 +285,14 @@ namespace DailyExpense.Authentication {
         
         public System.Threading.Tasks.Task SendInviteEmailAsync(string emailId, string currentUser) {
             return base.Channel.SendInviteEmailAsync(emailId, currentUser);
+        }
+        
+        public void RemoveFriend(int userId, int friendId) {
+            base.Channel.RemoveFriend(userId, friendId);
+        }
+        
+        public System.Threading.Tasks.Task RemoveFriendAsync(int userId, int friendId) {
+            return base.Channel.RemoveFriendAsync(userId, friendId);
         }
     }
 }

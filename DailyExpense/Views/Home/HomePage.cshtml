@@ -1,0 +1,46 @@
+﻿@model Classes.Homepage
+@{
+    ViewBag.Title = "HomePage";
+}
+@*style="background-color:#6fc3df;"
+    style="background-color:#8d82c4;"
+    style="background-color:#ec8d81;"
+    style="background-color:#e7b788;"
+    style="background-color:#8ea9e8;"
+    style="background-color:#87c5a4;"*@
+
+<link href="~/Content/HomePage/Homepage.css" rel="stylesheet" />
+<div class="wrapper" id="homePage">
+    <div class="container">
+        @*<div class="row text-center">
+                <h3 class="headermessage">Welcome to Daily Expense!</h3>
+            </div>*@
+        <h3 class="headermessage">Welcome to Daily Expense!</h3>
+        <div class="homepage">
+            <div class="row">
+                <div class="image-block col-sm-4" id="expenseDiv">
+                    <p> Expense Entry </p>
+                </div>
+                <div class="image-block col-sm-4" id="searchDiv">
+                    <p> Search </p>
+                </div>
+                <div class="image-block col-sm-4">
+                    <p> Downloads </p>
+                </div>
+                <div class="image-block col-sm-4">
+                    <p> Chart </p>
+                </div>
+                <div class="image-block col-sm-4">
+                    <p> Mail </p>
+                </div>
+                <div class="image-block col-sm-4">
+                    <p> Image Info </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script src="~/Scripts/Homepage/Homepage.js"></script>
+    <script src="~/Scripts/Common/Common.js"></script>
+}

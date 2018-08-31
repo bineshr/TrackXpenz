@@ -1,0 +1,311 @@
+﻿@model Classes.Userprofile
+@{
+    ViewBag.Title = "ProfileView";
+    Layout = "~/Views/Shared/_DashboardMenu.cshtml";
+}
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script>
+@*<link href="~/Content/AdminLTE/main.css" rel="stylesheet" />*@
+@*<link href="~/Content/AdminLTE/jquery.Jcrop.min.css" rel="stylesheet" />*@
+@*<link href="~/Content/ImgUpload/cropper.css" rel="stylesheet" />*@
+@*<link href="~/Content/ImgUpload/main.css" rel="stylesheet" />*@
+<link href="~/Content/ImgUpload/style.css" rel="stylesheet" />
+<style>
+    .container {
+        position: absolute;
+        top: 10%;
+        left: 10%;
+        right: 0;
+        bottom: 0;
+    }
+
+    .action {
+        width: 400px;
+        height: 30px;
+        margin: 10px 0;
+    }
+
+    .cropped > img {
+        margin-right: 10px;
+    }
+    #errinvite{
+        color:red;
+    }
+</style>
+
+<div class="modal fade" id="inviteFriend">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Total Amount</h4>
+            </div>
+            <div class="modal-body">                
+                <input type="text" class="form-control" id="txtinviteEmailid" placeholder="Email Address">
+                <p id="errinvite"></p>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnInvitefriends">Invite</button>
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="content-wrapper">
+    <section class="content-header">
+        <div class="row">
+            @foreach (var usrs in Model.UserProfile)
+            {
+            <div class="col-md-3">
+                <!-- Profile Image -->
+                <div class="box box-primary">
+                    <div class="box-body box-profile">
+                        @foreach (var usrImg in Model.UserProfile)
+                        {
+                        if (usrImg.picture != null)
+                        {
+                        <img class="profile-user-img img-responsive img-circle" src='data:image/png;base64,@(usrImg.picture)' alt="User profile picture">
+                        }
+                        else
+                        {
+                        <img class="profile-user-img img-responsive img-circle" src="~/Images/AdminLTE/avatar5.png" alt="User profile picture">
+                        }
+
+                        }
+
+                        <h3 class="profile-username text-center">@Session["UserName"].ToString()</h3>
+
+                        <p class="text-muted text-center"></p>
+                        <ul class="list-group list-group-unbordered">
+                            @*<li class="list-group-item">
+                            <b>Followers</b> <a class="pull-right">1,322</a>
+                            </li>
+                            <li class="list-group-item">
+                            <b>Following</b> <a class="pull-right">543</a>
+                            </li>*@
+                            <li class="list-group-item">
+                                <b>Friends</b> <a class="pull-right">13,287</a>
+                            </li>
+                        </ul>
+                        <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+                <!-- About Me Box -->
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">About Me</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
+                        <p class="text-muted">@usrs.CountryName</p>
+                        <hr>
+                        <strong><i class="fa fa-file-text-o margin-r-5"></i> Status</strong>
+                        @if (usrs.Status != "")
+                        {
+                        <p>@usrs.Status</p>
+                        }
+                        else
+                        {
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+                        }
+
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+            </div>
+            }
+
+            <!-- /.col -->
+            <div class="col-md-9">
+                <div class="nav-tabs-custom">
+                    <ul class="nav nav-tabs">
+
+                        <li class="active"><a href="#personel" data-toggle="tab">Personal Details</a></li>
+                        <li><a href="#setting" data-toggle="tab">Upload Image</a></li>
+                        <li><a href="#friends" data-toggle="tab">Friends</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        @{
+                        foreach (var usr in Model.UserProfile)
+                        {
+                        <div class="tab-pane active" id="personel">
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <label for="inputName" class="col-sm-2 control-label">First Name</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="txtFName" placeholder="First Name" value="@usr.FirstName">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputName" class="col-sm-2 control-label">Last Name</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="txtLNane" placeholder="Last Name" value="@usr.LastName">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="inputEmail" placeholder="Email" value="@Session["EmailId"].ToString()" disabled="disabled">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEmail" class="col-sm-2 control-label" data-value="@usr.CountryId">Country</label>
+                                    <div class="col-sm-10">
+                                        <select class="form-control" id="ddlcntry">
+                                            <option value="@usr.CountryId">@usr.CountryName</option>
+                                            @foreach (var country in Model.Country)
+                                            {
+                                            <option value="@country.Id">@country.Name</option>
+                                            }
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputName" class="col-sm-2 control-label">Mobile No</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="txtMobNo" placeholder="Mobile No" value="@usr.MobileNo">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputExperience" class="col-sm-2 control-label">Status</label>
+                                    <div class="col-sm-10">
+                                        @if (usr.Status != null)
+                                        {
+                                        <textarea class="form-control" id="txtStatus" placeholder="Status">@usr.Status</textarea>
+                                        }
+                                        else
+                                        {
+                                        <textarea class="form-control" id="txtStatus" placeholder="Status"></textarea>
+                                        }
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> I agree to the <a href="#">terms and conditions</a>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <p id="errMsgText"></p>
+                                        <button type="button" class="btn btn-primary" id="btnProUpdate">Update</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        }
+
+                        }
+                        <div class="tab-pane" id="setting">
+
+                            <div class="imageBox">
+                                <div class="thumbBox"></div>
+                                <div class="spinner" style="display: none">Loading...</div>
+                            </div>
+                            <div class="action">
+                                <input type="file" id="file" style="float:left; width: 250px">
+                                <input type="button" id="btnCrop" value="Crop" style="float: right">
+                                <input type="button" id="btnZoomIn" value="+" style="float: right">
+                                <input type="button" id="btnZoomOut" value="-" style="float: right">
+                            </div>
+                            <div class="cropped">
+
+                            </div>
+                            <p class="error"></p>
+                            <input type="button" value="Upload" class="btn btn-primary" style="float:left; margin-top:20px;" id="btnUploadImg" />
+
+
+                        </div>
+
+                        <div class="tab-pane" id="friends">
+                            <div class="row" style="margin:5px;">
+                                @{ 
+                                    foreach (var frnds in Model.Friends)
+                                    {
+                                        <div class="col-lg-3 col-xs-6" style="width:45%;border:1px solid #0094ff; margin:5px;">
+                                    <!-- small box -->
+                                    <div>
+                                        <div class="frndsimg" style="float:left;">
+                                            <img class="profile-user-img img-responsive img-circle" src="~/Images/AdminLTE/avatar5.png" alt="User profile picture">
+                                        </div>
+                                        <div class="frnds-content">
+                                            <p><strong>Name: </strong>@frnds.Name</p>
+                                            <p><strong>Email: </strong>@frnds.EmailId</p>
+                                            <p><strong>Loaction: </strong>@frnds.Location</p>
+                                        </div>
+                                        <button class="btn btn-primary bg-red" style="float:right">Remove Friend</button>
+                                    </div>
+                                </div>
+                                    }
+                                }
+                                
+
+                            </div>
+                            <button class="btn btn-primary" style="float:right" id="btnInvitefrnd" data-toggle="modal" data-target="#inviteFriend">Invite Friend</button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+</div>
+
+@section scripts {
+
+<script src="~/Scripts/ImageUpload/yui-min.js"></script>
+<script src="~/Scripts/ImageUpload/cropbox.js"></script>
+<script src="~/Scripts/Profile/Profile.js"></script>
+<script type="text/javascript">
+    YUI().use('node', 'crop-box', function (Y) {
+        var options =
+        {
+            imageBox: '.imageBox',
+            thumbBox: '.thumbBox',
+            spinner: '.spinner',
+            imgSrc: 'avatar.png'
+        }
+        var cropper = new Y.cropbox(options);
+        Y.one('#file').on('change', function () {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                options.imgSrc = e.target.result;
+                cropper = new Y.cropbox(options);
+            }
+            reader.readAsDataURL(this.get('files')._nodes[0]);
+            this.get('files')._nodes = [];
+        })
+        Y.one('#btnCrop').on('click', function () {
+            var img = cropper.getDataURL()
+            Y.one('.cropped').append('<img src="' + img + '">');
+        })
+        Y.one('#btnZoomIn').on('click', function () {
+            cropper.zoomIn();
+        })
+        Y.one('#btnZoomOut').on('click', function () {
+            cropper.zoomOut();
+        })
+    });
+</script>
+}
+

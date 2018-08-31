@@ -1,0 +1,72 @@
+﻿@model Classes.PersonelExpense
+@{
+    ViewBag.Title = "PersonelExpense";
+    Layout = "~/Views/Shared/_DashboardMenu.cshtml";
+}
+
+<style>
+    #perExpErrmsg {
+        color:red;
+    }
+    .per-header {
+        font-size:22px !important;
+    }
+</style>
+<div class="content-wrapper">
+    <section class="content-header">
+        <b class="per-header">
+            <i class="fa fa-file-text"></i>
+            Expense Entry           
+        </b>        
+    </section>
+    <section class="content">
+        <div class="box">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <div class="col-sm-10">
+                        <label class="control-label"></label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail" class="col-sm-2 control-label">Select Products</label>
+                    <div class="col-sm-10">
+                        @Html.DropDownListFor(a => a.ProductId, new SelectList(Model.Product, "Id", "Name"), "Select Products", new { @class = "form-control", @Id = "ddlproduct" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputExperience" class="col-sm-2 control-label">Description</label>
+                    <div class="col-sm-10">
+                        @Html.TextAreaFor(a => a.Description, new { @Id = "txtdescription", @class = "form-control", @placeholder = "Description" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputName" class="col-sm-2 control-label">Date</label>
+                    <div class="col-sm-10">                       
+                        @Html.TextBoxFor(a => a.Date, new { @Id = "txtdate", @Placeholder = "Date", @class = "form-control" })
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="inputName" class="col-sm-2 control-label">Amount</label>
+                    <div class="col-sm-10">
+                        @Html.TextBoxFor(a => a.Amount, new { @Id = "txtamount", @Placeholder = "Amount", @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-10">
+                        <label class="control-label"></label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <p id="perExpErrmsg"></p>
+                        <button type="button" class="btn btn-primary" id="btnSavePerExp">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>
+@section scripts {
+    <script src="~/Scripts/PersonelExpense/PersonelExpense.js"></script>
+}

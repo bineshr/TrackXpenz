@@ -1,0 +1,46 @@
+﻿@model Classes.SearchTourExpense
+@{
+    ViewBag.Title = "SearchTourExpense";
+}
+<link href="~/Content/Search/SearchTourExpense.css" rel="stylesheet" />
+<h2>SearchTourExpense</h2>
+
+<div class="view-tourExpense">
+    <div class="container">
+        <div class="row">
+            <div class="tileView col-sm-4">
+                <div class="tiles" id="tileSrchPro">
+                    <p>Overview</p>
+                </div>
+                <div class="tiles" id="tileSrchDate">
+                    <p>Search By Product</p>
+                </div>
+                <div class="tiles">
+                    <p>Search By Date</p>
+                </div>
+            </div>
+            <div class="areaView col-sm-4">
+                <div class="prod-view" id="srchProduct">
+                    <p class="txt-tag">Please choose the Product</p>
+                    @Html.DropDownListFor(a => a.UserListId, new SelectList(Model.UserList, "Id", "Name"), "Select User", new { @class = "productbox", @Id = "ddlproduct" })
+                   <div class="col-sm-4 usrTrips">
+                       @Html.DropDownListFor(a => a.TripListId, new SelectList(Model.TripList, "TripId", "Name"), "Select Trips", new { @class = "tripbox" })
+                   </div>
+                    <div class="col-sm-4"><button class="btn-srchProSubmit" id="btnSubmitPro">Submit</button></div>
+                    
+                    <p class="errMsgSrch" id="srchErr"></p>
+                    <div class="table-div">
+                        <table id="tbleViewPro">
+                            <tr>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Date</th>
+                                <th>Amount</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

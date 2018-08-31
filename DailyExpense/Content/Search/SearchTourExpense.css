@@ -1,0 +1,224 @@
+﻿.tiles {
+    border: 1px solid white;
+    padding: 0px;
+    margin: 0px;
+    margin-top: 23px;
+    height: 105px;
+    text-align: center;
+    vertical-align: bottom;
+    cursor: pointer;
+    margin-bottom: 10px;
+    margin-left: 33px;
+    width: 75%;
+}
+
+.tileView {
+    width: 24%;
+    height: 427px;
+    text-align: center;
+    padding-top: 5px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    margin-top: 84px;
+    margin-right: 0px;
+    margin-bottom: 10px;
+    margin-left: -80px;
+    vertical-align: bottom;
+    border-top-color: white;
+    border-right-color: white;
+    border-bottom-color: white;
+    border-left-color: white;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-image-source: none;
+    border-image-slice: 100%;
+    border-image-width: 1;
+    border-image-outset: 0;
+    border-image-repeat: stretch;
+}
+
+.tiles p {
+    color: white;
+    font-size: 16px;
+    margin-top: 30px;
+}
+
+.tilesEmpty {
+    border: 1px solid white;
+    padding: 0px;
+    margin: 0px;
+    margin-top: 23px;
+    height: 105px;
+    text-align: center;
+    vertical-align: bottom;
+    margin-bottom: 10px;
+    margin-left: 33px;
+    width: 75%;
+    opacity: 0.5;
+}
+
+.areaView {
+    width: 77%;
+    height: 427px;
+    text-align: center;
+    padding-top: 5px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    margin-top: 84px;
+    margin-right: 0px;
+    margin-bottom: 10px;
+    margin-left: 63px;
+    vertical-align: bottom;
+    border-top-color: white;
+    border-right-color: white;
+    border-bottom-color: white;
+    border-left-color: white;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-image-source: none;
+    border-image-slice: 100%;
+    border-image-width: 1;
+    border-image-outset: 0;
+    border-image-repeat: stretch;
+}
+
+.productbox {
+    width: 330px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid;
+    border-radius: 2px;
+    border-color: #808080;
+    color: white;
+    font-family: "Exo",sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 4px;
+    margin-top: 0px;
+    margin-left: -816px;
+    background-color: black;
+}
+
+.usrTrips {
+    width: 330px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid;
+    border-radius: 2px;
+    border-color: #808080;
+    color: white;
+    font-family: "Exo",sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 4px;
+    margin-top: 0px;
+    margin-left: -816px;
+    background-color: black;
+}
+.tripbox {
+    width: 330px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid;
+    border-radius: 2px;
+    border-color: #808080;
+    color: white;
+    font-family: "Exo",sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 4px;
+    margin-top: 0px;
+    margin-left: -816px;
+    background-color: black;
+}
+.txt-tag {
+    margin-left: -677px;
+    color: white;
+    margin-top: 15px;
+}
+
+.errMsgSrch {
+    color: red;
+    margin-left: -682px;
+    margin-top: 5px;
+}
+
+.btn-srchProSubmit {
+    margin-left: 365px;
+    width: 30%;
+    height: 35px;
+    margin-top: 3px;
+}
+
+table, td, th {
+    border: 1px solid white;
+    color: white;
+}
+
+table {
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 90%;
+    margin-left: 30px;
+}
+
+th {
+    height: 40px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+
+td {
+    height: 30px;
+}
+
+.table-div {
+    overflow: auto;
+    height: 310px;
+}
+
+input[type=text] {
+    width: 300px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid;
+    border-radius: 2px;
+    border-color: white;
+    color: white;
+    font-family: "Exo",sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 4px;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+input[type=submit] {
+    width: 115px;
+    height: 35px;
+    background: #fff;
+    border: 1px solid #fff;
+    cursor: pointer;
+    border-radius: 2px;
+    color: #a18d6c;
+    font-family: "Exo",sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 6px;
+    margin-top: 15px;
+}

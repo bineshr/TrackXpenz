@@ -1,0 +1,18 @@
+﻿@model Classes.CreateTitle
+@{
+    ViewBag.Title = "CreateTitle";
+}
+
+<div class="container">
+    <div class="wrapper">
+        @Html.TextBoxFor(a => a.Title, new { @Id="txttitle",@placeholder="Title Eg.(Kodaikanal Trip)"})
+        @Html.TextAreaFor(a => a.Description, new { @Id="txtdesc",@placeholder="Description"})
+        @Html.TextBoxFor(a => a.fromDate, new { @Id="txtfromDate",@placeholde="Journey Start Date"})
+        @Html.TextBoxFor(a=>a.toDate,new { @Id="txttoDate",@placeholder="Journey End Date"})
+        @Html.DropDownListFor(a=>a.FriendsId,)
+    </div>
+</div>
+@section scripts {
+<script src="~/Scripts/Common/Common.js"></script>
+}
+

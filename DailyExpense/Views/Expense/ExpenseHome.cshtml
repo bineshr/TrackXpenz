@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "ExpenseHome";
+}
+<link href="~/Content/HomePage/Expensehome.css" rel="stylesheet" />
+<div class="wrapper">
+    <div class="container">
+        @*<div class="row text-center">
+                <h3 class="headermessage">Welcome to Daily Expense!</h3>
+            </div>*@
+        <h3 class="headermessage">Welcome to Daily Expense!</h3>
+        <div class="homepage">
+            <div class="row">
+                <div class="image-block col-sm-4" id="personelExpenseDiv" >
+                    <p> Personel Expense </p>
+                </div>
+                <div class="image-block col-sm-4" id="tourExpenseDiv">
+                    <p> Tour Expense </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts {
+<script src="~/Scripts/ExpenseHome/ExpenseHome.js"></script>
+<script src="~/Scripts/Common/Common.js"></script>
+    }
+

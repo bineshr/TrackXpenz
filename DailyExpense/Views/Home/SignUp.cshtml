@@ -1,0 +1,200 @@
+﻿@model Classes.User
+@{
+    ViewBag.Title = "SignUp";
+}
+<link href="~/Content/SignUp/SignUp.css" rel="stylesheet" />
+<link href="~/Content/AdminLTE/blue.css" rel="stylesheet" />
+
+<style>
+    .example-modal .modal {
+        position: relative;
+        top: auto;
+        bottom: auto;
+        right: auto;
+        left: auto;
+        display: block;
+        z-index: 1;
+    }
+
+    .example-modal .modal {
+        background: transparent !important;
+    }
+</style>
+<div class="modal fade" id="modal-default">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>              
+            </div>
+            <div class="modal-body">
+                <p>Your account has been created successfully.Please SignIn with your credentials</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal" id="btnSuccess">OK</button>               
+            </div>
+        </div>      
+    </div>    
+</div>
+<div class="register-box">
+    <div class="register-logo">
+        <a href="#"><b>Sign</b>Up</a>
+    </div>
+    <div class="register-box-body">
+        <p class="login-box-msg">Register a new account</p>
+@using (Html.BeginForm("SignUp", "Home", FormMethod.Post))
+{
+        <form>
+            <div class="form-group first-name">
+                
+                @Html.TextBoxFor(a => a.FirstName, new { @Id = "txtfirsttname", @placeholder = "First Name", @Class = "form-control" })
+               
+            </div> 
+            <div class="form-group last-name">
+                
+                @Html.TextBoxFor(a => a.LastName, new { @Id = "txtlasttname", @placeholder = "Last Name", @Class = "form-control" })              
+            </div>           
+            <div class="form-group email-Id">
+                
+                @Html.TextBoxFor(a => a.EmailId, new { @Id = "txtUsername", @placeholder = "Email", @Class = "form-control" })                
+            </div> 
+            <div class="form-group pwd-text">
+               
+                @Html.PasswordFor(a => a.Password, new { @Id = "txtPassword", @placeholder = "Password", @Class = "form-control" })
+            </div> 
+            <div class="form-group conf-pwd">
+                
+                @Html.PasswordFor(a => a.ConfirmPassword, new { @Id = "txtconPassword", @placeholder = "Retype password", @Class = "form-control" })
+            </div> 
+            <div class="form-group mobile-No">
+                
+                @Html.TextBoxFor(a => a.MobileNo, new { @Id = "txtmobileno", @placeholder = "Mobile No", @Class = "form-control" })
+            </div>         
+            
+            <div class="form-group">
+                
+                <div class="radio">                  
+                    <label class="radio">@Html.RadioButtonFor(a => a.Gender, "Male", new { @Id = "rdmale" }) Male</label>
+                </div>
+                <div class="radio">                  
+                    <label class="radio">@Html.RadioButtonFor(a => a.Gender, "Female", new { @Id = "rdFemale" }) Female</label>
+                </div>
+            </div>
+            <div class="form-group country-ddl">
+                
+                @Html.DropDownListFor(a => a.CountryId, new SelectList(Model.Country, "Id", "Name"), "Select Country", new { @Id = "ddlcntry", @class = "form-control" })
+            </div>
+            <div class="row">                                     
+                    <div class="col-xs-12">
+                        <div class="form-group has-error">
+                            <label class="control-label" for="inputSuccess" id="errMsgsignUp"><i class="fa fa-check"></i></label>
+                        </div>
+                        @*<div class="checkbox icheck">
+                            <label>
+                                <input type="checkbox"> I agree to the <a href="#">terms</a>
+                            </label>
+                        </div>*@
+                    </div>
+
+                    <!-- /.col -->
+                    <div class="col-xs-4">
+                        <button type="submit" class="btn btn-primary btn-block btn-flat" id="btnSignUp">Register</button>
+                    </div>
+                <a href="../Home/SignIn" class="text-center">Already have an Account?</a>
+                    <!-- /.col -->
+                </div>
+        </form>
+}       
+        
+    </div>  
+</div>
+
+<script src="~/Scripts/AdminLTE/jquery.min.js"></script>
+<script src="~/Scripts/AdminLTE/bootstrap.min.js"></script>
+<script src="~/Scripts/AdminLTE/icheck.min.js"></script>
+<script>
+    $(function () {
+        $('input').iCheck({
+            checkboxClass: 'icheckbox_square-blue',
+            radioClass: 'iradio_square-blue',
+            increaseArea: '15%' // optional
+        });
+    });
+</script>
+
+@*<div class="container">
+        @using (Html.BeginForm("SignUp", "Home", FormMethod.Post))
+        {
+            <div class="wrapper">
+                <div class="signUp">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    @Html.TextBoxFor(a => a.EmailId, new { @Id = "txtUsername", @placeholder = "UserName" })
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    @Html.TextBoxFor(a => a.FirstName, new { @Id = "txtfirsttname", @placeholder = "First Name" })
+
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    @Html.PasswordFor(a => a.Password, new { @Id = "txtPassword", @placeholder = "Password" })
+
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    @Html.TextBoxFor(a => a.LastName, new { @Id = "txtlasttname", @placeholder = "Last Name" })
+
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    @Html.PasswordFor(a => a.ConfirmPassword, new { @Id = "txtconPassword", @placeholder = "Confirm Password" })
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    @Html.PasswordFor(a => a.MobileNo, new { @Id = "txtmobileno", @placeholder = "Phone Number" })
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="rdgender">
+                                        <label class="radio-inline">@Html.RadioButtonFor(a => a.Gender, "Male", new { @Id = "rdmale" }) Male</label>
+                                        <label class="radio-inline">@Html.RadioButtonFor(a => a.Gender, "Female", new { @Id = "rdFemale" }) Female</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    @Html.DropDownListFor(a => a.CountryId, new SelectList(Model.Country, "Id", "Name"), "Select Country", new { @Id = "ddlcntry", @class = "country" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <p id="errMsgsignUp" class="errMsgsgnUp"></p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="submit" value="Sign Up" id="btnSignUp">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>*@
+@section scripts{
+    <script src="~/Scripts/Common/Common.js"></script>
+    <script src="~/Scripts/SignUp/SignUp.js"></script>
+}

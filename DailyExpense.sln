@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DailyExpense", "DailyExpense\DailyExpense.csproj", "{BB7DCB84-EA10-433F-9482-EFA614357B10}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business Logic", "Business Logic", "{A770A98B-13B5-43EF-82D2-7C5AFBADF72A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Class", "Class", "{756CE7A7-2072-4F06-8F96-2651DF7F66B9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Website", "Website", "{64EE802A-EDD4-463C-9C8E-361B547C2657}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DailyExpenseBL", "DailyExpenseBL\DailyExpenseBL.csproj", "{B45DDB60-9DFD-4E8B-B794-FB6A7B5649DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DailyExpenseDL", "DailyExpenseDL\DailyExpenseDL.csproj", "{9AB9B121-8F15-4AC5-9DF6-9C74D0918CF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Classes", "Classes\Classes.csproj", "{0F989CE1-CB38-4FBB-B854-32F7E6DE6EF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DailyExpenseService", "DailyExpenseService\DailyExpenseService.csproj", "{411C40FE-CE70-4A93-8AAE-B7E27B343981}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BB7DCB84-EA10-433F-9482-EFA614357B10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB7DCB84-EA10-433F-9482-EFA614357B10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB7DCB84-EA10-433F-9482-EFA614357B10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB7DCB84-EA10-433F-9482-EFA614357B10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B45DDB60-9DFD-4E8B-B794-FB6A7B5649DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B45DDB60-9DFD-4E8B-B794-FB6A7B5649DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B45DDB60-9DFD-4E8B-B794-FB6A7B5649DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B45DDB60-9DFD-4E8B-B794-FB6A7B5649DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AB9B121-8F15-4AC5-9DF6-9C74D0918CF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AB9B121-8F15-4AC5-9DF6-9C74D0918CF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AB9B121-8F15-4AC5-9DF6-9C74D0918CF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AB9B121-8F15-4AC5-9DF6-9C74D0918CF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F989CE1-CB38-4FBB-B854-32F7E6DE6EF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F989CE1-CB38-4FBB-B854-32F7E6DE6EF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F989CE1-CB38-4FBB-B854-32F7E6DE6EF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F989CE1-CB38-4FBB-B854-32F7E6DE6EF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{411C40FE-CE70-4A93-8AAE-B7E27B343981}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{411C40FE-CE70-4A93-8AAE-B7E27B343981}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{411C40FE-CE70-4A93-8AAE-B7E27B343981}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{411C40FE-CE70-4A93-8AAE-B7E27B343981}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BB7DCB84-EA10-433F-9482-EFA614357B10} = {64EE802A-EDD4-463C-9C8E-361B547C2657}
+		{B45DDB60-9DFD-4E8B-B794-FB6A7B5649DE} = {A770A98B-13B5-43EF-82D2-7C5AFBADF72A}
+		{9AB9B121-8F15-4AC5-9DF6-9C74D0918CF7} = {A770A98B-13B5-43EF-82D2-7C5AFBADF72A}
+		{0F989CE1-CB38-4FBB-B854-32F7E6DE6EF3} = {756CE7A7-2072-4F06-8F96-2651DF7F66B9}
+		{411C40FE-CE70-4A93-8AAE-B7E27B343981} = {A770A98B-13B5-43EF-82D2-7C5AFBADF72A}
+	EndGlobalSection
+EndGlobal

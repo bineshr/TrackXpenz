@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Expense" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8071/Expense.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8071/Expense.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8071/Expense.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Classes" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IExpense_ProductList_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProductList" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_ProductList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProductListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_SavePersonelExpense_InputMessage">
+    <wsdl:part name="parameters" element="tns:SavePersonelExpense" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_SavePersonelExpense_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SavePersonelExpenseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_PersonelExpensebyDateList_InputMessage">
+    <wsdl:part name="parameters" element="tns:PersonelExpensebyDateList" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_PersonelExpensebyDateList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PersonelExpensebyDateListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_PersonelExpensebyProductList_InputMessage">
+    <wsdl:part name="parameters" element="tns:PersonelExpensebyProductList" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_PersonelExpensebyProductList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PersonelExpensebyProductListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_resultOverallChart_InputMessage">
+    <wsdl:part name="parameters" element="tns:resultOverallChart" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_resultOverallChart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:resultOverallChartResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_chartOverallbyProductList_InputMessage">
+    <wsdl:part name="parameters" element="tns:chartOverallbyProductList" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_chartOverallbyProductList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:chartOverallbyProductListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_chartOverallbyDateList_InputMessage">
+    <wsdl:part name="parameters" element="tns:chartOverallbyDateList" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_chartOverallbyDateList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:chartOverallbyDateListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_resultOverallData_InputMessage">
+    <wsdl:part name="parameters" element="tns:resultOverallData" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_resultOverallData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:resultOverallDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_UpdateStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatus" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_UpdateStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_GetFriendsList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFriendsList" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_GetFriendsList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFriendsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_SaveTripDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTripDetails" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_SaveTripDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTripDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_FriendTripMapping_InputMessage">
+    <wsdl:part name="parameters" element="tns:FriendTripMapping" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_FriendTripMapping_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FriendTripMappingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_SaveFriendsTripExpenseEntry_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveFriendsTripExpenseEntry" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_SaveFriendsTripExpenseEntry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveFriendsTripExpenseEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_TripItemList_InputMessage">
+    <wsdl:part name="parameters" element="tns:TripItemList" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_TripItemList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TripItemListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_GetTripFriends_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTripFriends" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_GetTripFriends_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTripFriendsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_GetTripHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTripHistory" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_GetTripHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTripHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_GetUserList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserList" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_GetUserList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_GetUserTrips_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserTrips" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_GetUserTrips_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserTripsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_GetExpenseCurrentMonth_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExpenseCurrentMonth" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_GetExpenseCurrentMonth_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExpenseCurrentMonthResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_GetTotalExpenseCurrentMonth_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTotalExpenseCurrentMonth" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_GetTotalExpenseCurrentMonth_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTotalExpenseCurrentMonthResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_GetTotalExpenseLastMonth_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTotalExpenseLastMonth" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_GetTotalExpenseLastMonth_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTotalExpenseLastMonthResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_GetTripExpenseByTotal_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTripExpenseByTotal" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_GetTripExpenseByTotal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTripExpenseByTotalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_GetNonTripFriend_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNonTripFriend" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_GetNonTripFriend_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNonTripFriendResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_GetTripExpenseByUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTripExpenseByUser" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_GetTripExpenseByUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTripExpenseByUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_GetTripDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTripDetails" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_GetTripDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTripDetailsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IExpense">
+    <wsdl:operation name="ProductList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpense/ProductList" message="tns:IExpense_ProductList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpense/ProductListResponse" message="tns:IExpense_ProductList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SavePersonelExpense">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpense/SavePersonelExpense" message="tns:IExpense_SavePersonelExpense_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpense/SavePersonelExpenseResponse" message="tns:IExpense_SavePersonelExpense_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PersonelExpensebyDateList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpense/PersonelExpensebyDateList" message="tns:IExpense_PersonelExpensebyDateList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpense/PersonelExpensebyDateListResponse" message="tns:IExpense_PersonelExpensebyDateList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PersonelExpensebyProductList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpense/PersonelExpensebyProductList" message="tns:IExpense_PersonelExpensebyProductList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpense/PersonelExpensebyProductListResponse" message="tns:IExpense_PersonelExpensebyProductList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="resultOverallChart">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpense/resultOverallChart" message="tns:IExpense_resultOverallChart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpense/resultOverallChartResponse" message="tns:IExpense_resultOverallChart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="chartOverallbyProductList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpense/chartOverallbyProductList" message="tns:IExpense_chartOverallbyProductList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpense/chartOverallbyProductListResponse" message="tns:IExpense_chartOverallbyProductList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="chartOverallbyDateList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpense/chartOverallbyDateList" message="tns:IExpense_chartOverallbyDateList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpense/chartOverallbyDateListResponse" message="tns:IExpense_chartOverallbyDateList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="resultOverallData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpense/resultOverallData" message="tns:IExpense_resultOverallData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpense/resultOverallDataResponse" message="tns:IExpense_resultOverallData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpense/UpdateStatus" message="tns:IExpense_UpdateStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpense/UpdateStatusResponse" message="tns:IExpense_UpdateStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFriendsList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpense/GetFriendsList" message="tns:IExpense_GetFriendsList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpense/GetFriendsListResponse" message="tns:IExpense_GetFriendsList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveTripDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpense/SaveTripDetails" message="tns:IExpense_SaveTripDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpense/SaveTripDetailsResponse" message="tns:IExpense_SaveTripDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FriendTripMapping">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpense/FriendTripMapping" message="tns:IExpense_FriendTripMapping_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpense/FriendTripMappingResponse" message="tns:IExpense_FriendTripMapping_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveFriendsTripExpenseEntry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpense/SaveFriendsTripExpenseEntry" message="tns:IExpense_SaveFriendsTripExpenseEntry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpense/SaveFriendsTripExpenseEntryResponse" message="tns:IExpense_SaveFriendsTripExpenseEntry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TripItemList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpense/TripItemList" message="tns:IExpense_TripItemList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpense/TripItemListResponse" message="tns:IExpense_TripItemList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTripFriends">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpense/GetTripFriends" message="tns:IExpense_GetTripFriends_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpense/GetTripFriendsResponse" message="tns:IExpense_GetTripFriends_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTripHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpense/GetTripHistory" message="tns:IExpense_GetTripHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpense/GetTripHistoryResponse" message="tns:IExpense_GetTripHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpense/GetUserList" message="tns:IExpense_GetUserList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpense/GetUserListResponse" message="tns:IExpense_GetUserList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserTrips">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpense/GetUserTrips" message="tns:IExpense_GetUserTrips_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpense/GetUserTripsResponse" message="tns:IExpense_GetUserTrips_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExpenseCurrentMonth">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpense/GetExpenseCurrentMonth" message="tns:IExpense_GetExpenseCurrentMonth_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpense/GetExpenseCurrentMonthResponse" message="tns:IExpense_GetExpenseCurrentMonth_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalExpenseCurrentMonth">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpense/GetTotalExpenseCurrentMonth" message="tns:IExpense_GetTotalExpenseCurrentMonth_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpense/GetTotalExpenseCurrentMonthResponse" message="tns:IExpense_GetTotalExpenseCurrentMonth_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalExpenseLastMonth">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpense/GetTotalExpenseLastMonth" message="tns:IExpense_GetTotalExpenseLastMonth_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpense/GetTotalExpenseLastMonthResponse" message="tns:IExpense_GetTotalExpenseLastMonth_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTripExpenseByTotal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpense/GetTripExpenseByTotal" message="tns:IExpense_GetTripExpenseByTotal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpense/GetTripExpenseByTotalResponse" message="tns:IExpense_GetTripExpenseByTotal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNonTripFriend">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpense/GetNonTripFriend" message="tns:IExpense_GetNonTripFriend_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpense/GetNonTripFriendResponse" message="tns:IExpense_GetNonTripFriend_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTripExpenseByUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpense/GetTripExpenseByUser" message="tns:IExpense_GetTripExpenseByUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpense/GetTripExpenseByUserResponse" message="tns:IExpense_GetTripExpenseByUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTripDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpense/GetTripDetails" message="tns:IExpense_GetTripDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpense/GetTripDetailsResponse" message="tns:IExpense_GetTripDetails_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IExpense" type="tns:IExpense">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ProductList">
+      <soap:operation soapAction="http://tempuri.org/IExpense/ProductList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePersonelExpense">
+      <soap:operation soapAction="http://tempuri.org/IExpense/SavePersonelExpense" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PersonelExpensebyDateList">
+      <soap:operation soapAction="http://tempuri.org/IExpense/PersonelExpensebyDateList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PersonelExpensebyProductList">
+      <soap:operation soapAction="http://tempuri.org/IExpense/PersonelExpensebyProductList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="resultOverallChart">
+      <soap:operation soapAction="http://tempuri.org/IExpense/resultOverallChart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="chartOverallbyProductList">
+      <soap:operation soapAction="http://tempuri.org/IExpense/chartOverallbyProductList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="chartOverallbyDateList">
+      <soap:operation soapAction="http://tempuri.org/IExpense/chartOverallbyDateList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="resultOverallData">
+      <soap:operation soapAction="http://tempuri.org/IExpense/resultOverallData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatus">
+      <soap:operation soapAction="http://tempuri.org/IExpense/UpdateStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFriendsList">
+      <soap:operation soapAction="http://tempuri.org/IExpense/GetFriendsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTripDetails">
+      <soap:operation soapAction="http://tempuri.org/IExpense/SaveTripDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FriendTripMapping">
+      <soap:operation soapAction="http://tempuri.org/IExpense/FriendTripMapping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveFriendsTripExpenseEntry">
+      <soap:operation soapAction="http://tempuri.org/IExpense/SaveFriendsTripExpenseEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TripItemList">
+      <soap:operation soapAction="http://tempuri.org/IExpense/TripItemList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTripFriends">
+      <soap:operation soapAction="http://tempuri.org/IExpense/GetTripFriends" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTripHistory">
+      <soap:operation soapAction="http://tempuri.org/IExpense/GetTripHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserList">
+      <soap:operation soapAction="http://tempuri.org/IExpense/GetUserList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserTrips">
+      <soap:operation soapAction="http://tempuri.org/IExpense/GetUserTrips" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExpenseCurrentMonth">
+      <soap:operation soapAction="http://tempuri.org/IExpense/GetExpenseCurrentMonth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalExpenseCurrentMonth">
+      <soap:operation soapAction="http://tempuri.org/IExpense/GetTotalExpenseCurrentMonth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalExpenseLastMonth">
+      <soap:operation soapAction="http://tempuri.org/IExpense/GetTotalExpenseLastMonth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTripExpenseByTotal">
+      <soap:operation soapAction="http://tempuri.org/IExpense/GetTripExpenseByTotal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNonTripFriend">
+      <soap:operation soapAction="http://tempuri.org/IExpense/GetNonTripFriend" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTripExpenseByUser">
+      <soap:operation soapAction="http://tempuri.org/IExpense/GetTripExpenseByUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTripDetails">
+      <soap:operation soapAction="http://tempuri.org/IExpense/GetTripDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Expense">
+    <wsdl:port name="BasicHttpBinding_IExpense" binding="tns:BasicHttpBinding_IExpense">
+      <soap:address location="http://localhost:8071/Expense.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

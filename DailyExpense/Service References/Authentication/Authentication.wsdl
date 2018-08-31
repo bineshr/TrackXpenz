@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Authentication" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8071/Authentication.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8071/Authentication.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8071/Authentication.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Classes" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAuthentication_SaveUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUser" />
+  </wsdl:message>
+  <wsdl:message name="IAuthentication_SaveUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthentication_IsUserExist_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsUserExist" />
+  </wsdl:message>
+  <wsdl:message name="IAuthentication_IsUserExist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsUserExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthentication_IsProfileCompleted_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsProfileCompleted" />
+  </wsdl:message>
+  <wsdl:message name="IAuthentication_IsProfileCompleted_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsProfileCompletedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthentication_AuthenticateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateUser" />
+  </wsdl:message>
+  <wsdl:message name="IAuthentication_AuthenticateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthentication_CountrtyList_InputMessage">
+    <wsdl:part name="parameters" element="tns:CountrtyList" />
+  </wsdl:message>
+  <wsdl:message name="IAuthentication_CountrtyList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CountrtyListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthentication_IsFriendRequestExist_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsFriendRequestExist" />
+  </wsdl:message>
+  <wsdl:message name="IAuthentication_IsFriendRequestExist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsFriendRequestExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthentication_FriendRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:FriendRequest" />
+  </wsdl:message>
+  <wsdl:message name="IAuthentication_FriendRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FriendRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthentication_FriendRequestAccept_InputMessage">
+    <wsdl:part name="parameters" element="tns:FriendRequestAccept" />
+  </wsdl:message>
+  <wsdl:message name="IAuthentication_FriendRequestAccept_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FriendRequestAcceptResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthentication_FriendRequestReject_InputMessage">
+    <wsdl:part name="parameters" element="tns:FriendRequestReject" />
+  </wsdl:message>
+  <wsdl:message name="IAuthentication_FriendRequestReject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FriendRequestRejectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthentication_GetIncome_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncome" />
+  </wsdl:message>
+  <wsdl:message name="IAuthentication_GetIncome_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncomeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthentication_SaveIncome_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveIncome" />
+  </wsdl:message>
+  <wsdl:message name="IAuthentication_SaveIncome_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveIncomeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthentication_UpdateProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProfile" />
+  </wsdl:message>
+  <wsdl:message name="IAuthentication_UpdateProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthentication_GetUserProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserProfile" />
+  </wsdl:message>
+  <wsdl:message name="IAuthentication_GetUserProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthentication_SaveImage_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveImage" />
+  </wsdl:message>
+  <wsdl:message name="IAuthentication_SaveImage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthentication_Inviteuser_InputMessage">
+    <wsdl:part name="parameters" element="tns:Inviteuser" />
+  </wsdl:message>
+  <wsdl:message name="IAuthentication_Inviteuser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InviteuserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthentication_UserProfileExist_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserProfileExist" />
+  </wsdl:message>
+  <wsdl:message name="IAuthentication_UserProfileExist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserProfileExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthentication_SendInviteEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendInviteEmail" />
+  </wsdl:message>
+  <wsdl:message name="IAuthentication_SendInviteEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendInviteEmailResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAuthentication">
+    <wsdl:operation name="SaveUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthentication/SaveUser" message="tns:IAuthentication_SaveUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthentication/SaveUserResponse" message="tns:IAuthentication_SaveUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsUserExist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthentication/IsUserExist" message="tns:IAuthentication_IsUserExist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthentication/IsUserExistResponse" message="tns:IAuthentication_IsUserExist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsProfileCompleted">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthentication/IsProfileCompleted" message="tns:IAuthentication_IsProfileCompleted_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthentication/IsProfileCompletedResponse" message="tns:IAuthentication_IsProfileCompleted_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthentication/AuthenticateUser" message="tns:IAuthentication_AuthenticateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthentication/AuthenticateUserResponse" message="tns:IAuthentication_AuthenticateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CountrtyList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthentication/CountrtyList" message="tns:IAuthentication_CountrtyList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthentication/CountrtyListResponse" message="tns:IAuthentication_CountrtyList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsFriendRequestExist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthentication/IsFriendRequestExist" message="tns:IAuthentication_IsFriendRequestExist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthentication/IsFriendRequestExistResponse" message="tns:IAuthentication_IsFriendRequestExist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FriendRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthentication/FriendRequest" message="tns:IAuthentication_FriendRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthentication/FriendRequestResponse" message="tns:IAuthentication_FriendRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FriendRequestAccept">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthentication/FriendRequestAccept" message="tns:IAuthentication_FriendRequestAccept_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthentication/FriendRequestAcceptResponse" message="tns:IAuthentication_FriendRequestAccept_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FriendRequestReject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthentication/FriendRequestReject" message="tns:IAuthentication_FriendRequestReject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthentication/FriendRequestRejectResponse" message="tns:IAuthentication_FriendRequestReject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncome">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthentication/GetIncome" message="tns:IAuthentication_GetIncome_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthentication/GetIncomeResponse" message="tns:IAuthentication_GetIncome_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveIncome">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthentication/SaveIncome" message="tns:IAuthentication_SaveIncome_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthentication/SaveIncomeResponse" message="tns:IAuthentication_SaveIncome_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProfile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthentication/UpdateProfile" message="tns:IAuthentication_UpdateProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthentication/UpdateProfileResponse" message="tns:IAuthentication_UpdateProfile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserProfile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthentication/GetUserProfile" message="tns:IAuthentication_GetUserProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthentication/GetUserProfileResponse" message="tns:IAuthentication_GetUserProfile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveImage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthentication/SaveImage" message="tns:IAuthentication_SaveImage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthentication/SaveImageResponse" message="tns:IAuthentication_SaveImage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Inviteuser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthentication/Inviteuser" message="tns:IAuthentication_Inviteuser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthentication/InviteuserResponse" message="tns:IAuthentication_Inviteuser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserProfileExist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthentication/UserProfileExist" message="tns:IAuthentication_UserProfileExist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthentication/UserProfileExistResponse" message="tns:IAuthentication_UserProfileExist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendInviteEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthentication/SendInviteEmail" message="tns:IAuthentication_SendInviteEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthentication/SendInviteEmailResponse" message="tns:IAuthentication_SendInviteEmail_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IAuthentication" type="tns:IAuthentication">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SaveUser">
+      <soap:operation soapAction="http://tempuri.org/IAuthentication/SaveUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUserExist">
+      <soap:operation soapAction="http://tempuri.org/IAuthentication/IsUserExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsProfileCompleted">
+      <soap:operation soapAction="http://tempuri.org/IAuthentication/IsProfileCompleted" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUser">
+      <soap:operation soapAction="http://tempuri.org/IAuthentication/AuthenticateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CountrtyList">
+      <soap:operation soapAction="http://tempuri.org/IAuthentication/CountrtyList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsFriendRequestExist">
+      <soap:operation soapAction="http://tempuri.org/IAuthentication/IsFriendRequestExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FriendRequest">
+      <soap:operation soapAction="http://tempuri.org/IAuthentication/FriendRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FriendRequestAccept">
+      <soap:operation soapAction="http://tempuri.org/IAuthentication/FriendRequestAccept" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FriendRequestReject">
+      <soap:operation soapAction="http://tempuri.org/IAuthentication/FriendRequestReject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncome">
+      <soap:operation soapAction="http://tempuri.org/IAuthentication/GetIncome" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveIncome">
+      <soap:operation soapAction="http://tempuri.org/IAuthentication/SaveIncome" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProfile">
+      <soap:operation soapAction="http://tempuri.org/IAuthentication/UpdateProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserProfile">
+      <soap:operation soapAction="http://tempuri.org/IAuthentication/GetUserProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveImage">
+      <soap:operation soapAction="http://tempuri.org/IAuthentication/SaveImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Inviteuser">
+      <soap:operation soapAction="http://tempuri.org/IAuthentication/Inviteuser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserProfileExist">
+      <soap:operation soapAction="http://tempuri.org/IAuthentication/UserProfileExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendInviteEmail">
+      <soap:operation soapAction="http://tempuri.org/IAuthentication/SendInviteEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Authentication">
+    <wsdl:port name="BasicHttpBinding_IAuthentication" binding="tns:BasicHttpBinding_IAuthentication">
+      <soap:address location="http://localhost:8071/Authentication.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

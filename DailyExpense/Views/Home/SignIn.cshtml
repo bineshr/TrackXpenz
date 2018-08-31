@@ -1,0 +1,198 @@
+﻿@model DailyExpense.Models.Home.Login
+@{
+    ViewBag.Title = "SignIn";
+}
+<link href="~/Content/Login/Login.css" rel="stylesheet" />
+
+<div class="login-box">
+    <div class="login-logo">
+        <a><b>Sign</b>In</a>
+    </div>
+    <div class="login-box-body">
+        <p class="login-box-msg">Sign in to start your session</p>
+        @using (Html.BeginForm("SignIn", "Home", FormMethod.Post))
+        {
+            <form>
+                <div class="form-group email-Id">
+
+                    @Html.TextBoxFor(a => a.EmailId, new { @Id = "txtUsername", @placeholder = "Email", @class = "form-control" })
+                </div>
+                <div class="form-group pwd-txt passwordarea" style="display:none;">
+                    @Html.PasswordFor(a => a.Password, new { @Id = "txtPassword", @placeholder = "Password", @class = "form-control" })
+
+                </div>
+                <div class="form-group has-error">
+                    <label class="control-label" for="inputSuccess" id="errMsgLogin"><i class="fa fa-check"></i></label>
+                </div>
+
+                @*<div class="row" style="display:none;">
+                        <div class="col-xs-8">
+                            <div class="checkbox icheck">
+                                <label>
+                                    <input type="checkbox"> Remember Me
+                                </label>
+                            </div>
+                        </div>
+
+
+                    </div>*@
+
+                <div class="form-group btn-area">
+                    <button type="submit" class="btn btn-primary btn-block btn-flat" id="btnLogin" style="float:left;">Next</button>
+                </div>
+                <div class="form-group link-page" style="display:none;">
+                    <a href="#" data-toggle="modal" data-target="#myModalNorm">I forgot my password</a><br>                    
+                </div>
+                <a href="../Home/SignUp" class="text-center">Register a new membership</a>
+            </form>
+        }
+
+
+    </div>
+
+</div>
+
+
+
+
+<!-- Modal -->
+<!-- Button trigger modal -->
+<!-- Modal -->
+<div class="modal fade" id="myModalNorm" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close"
+                        data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <img src="~/Images/Login/PasswordRetrieve.png" />
+                <h4 class="modal-title" id="myModalLabel">
+                    Forgot Password
+                </h4>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="modal-body">
+
+                <form role="form">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control"
+                               id="txtInputEmail" placeholder="Enter email" />
+                    </div>
+                    <p id="frgErrMsg"></p>
+                    <button type="submit" class="btn btn-default" id="btnSubFrgPwd">Submit</button>&nbsp;
+                    <button type="button" class="btn btn-default"
+                            data-dismiss="modal">
+                        Close
+                    </button>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="profileModal" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                
+                <img src="~/Images/Login/procomplete.png" />
+                <h4 class="modal-title" id="protitle">
+                    Complete Your Profile(CYP)
+                </h4>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="modal-body">
+
+                <form role="form">
+
+                    <div class="form-group">
+                        <label for="lblproemail">Email address*</label>
+                        <input type="email" class="form-control" id="txtproemail" placeholder="Enter email" disabled />
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <label for="lblprofname">First Name*</label>
+                            <input type="text" class="form-control" id="txtprofname" placeholder="Enter first name" />
+                        </div>
+                        <div class="col-xs-6">
+                            <label for="lblprolname">Last Name*</label>
+                            <input type="text" class="form-control" id="txtprolname" placeholder="Enter last name" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <label for="lblpropwd">Password*</label>
+                            <input type="password" class="form-control" id="txtpropassword" placeholder="Enter password" />
+                        </div>
+                        <div class="col-xs-6">
+                            <label for="lblprocpwd">Confirm Password*</label>
+                            <input type="password" class="form-control" id="txtproconpassword" placeholder="confirm password" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <label for="lblpromobileno">Mobile No*</label>
+                            <input type="text" class="form-control" id="txtpromobileno" placeholder="Enter mobile number" />
+                        </div>
+                        <div class="col-xs-6">
+                            <label for="lblprogender">Gender*</label>
+                            <div class="radio">
+                                <label class="radio"><input type="radio" value="Male" id="rdpromale" name="Gender" class="genderradio" /> Male</label>
+                            </div>
+                            <div class="radio">
+                                <label class="radio"><input type="radio" value="Female" id="rdprofemale" name="Gender" class="genderradio" /> Female</label>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <div class="form-group">
+                        <label for="lblprocountry">Country*</label>
+                        <select class="form-control" id="ddlcountry">
+                            <option value="-1">Select</option>
+                            @foreach (var country in Model.Country)
+                            {
+                                <option value="@country.Id">@country.Name</option>
+                            }
+                        </select>
+
+                    </div>
+                    <div class="form-group has-error">
+                        <label class="control-label" for="inputSuccess" id="proerrMsg"><i class="fa fa-check"></i></label>
+                    </div>
+                    @*<p id="proerrMsg" class="has-error"></p>*@
+                    <button type="submit" class="btn btn-default" id="btnproComplete">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+@section scripts{
+    <script src="~/Scripts/Common/Common.js"></script>
+    <script src="~/Scripts/Login/Login.js"></script>
+    <script src="~/Scripts/Login/prefixfree.js"></script>
+}

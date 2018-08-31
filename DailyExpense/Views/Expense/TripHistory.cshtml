@@ -1,0 +1,70 @@
+﻿@model Classes.TripHistory
+@{
+    ViewBag.Title = "TripHistory";
+    Layout = "~/Views/Shared/_DashboardMenu.cshtml";
+}
+}
+
+<style>
+    .small-box h3 {
+    font-size: 24px !important;
+    
+}
+
+</style>
+<div id="loadTripHistory">
+@Html.Partial("_LoadTripHistory", Model.tripDetails)
+</div>
+
+<div class="content-wrapper">
+    <section class="content">
+        <div class="row">
+            @{
+                foreach (var trips in Model.tripHistoryList)
+                {
+                    if (trips.Status == "True")
+                    {
+                <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-aqua">
+                        <div class="inner">
+                            <h3>@trips.Title</h3>
+                            <p>From @trips.StartDate To @trips.EndDate</p>
+                            <p>Trip Begins</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-bag"></i>
+                        </div>
+                        <a href="#" class="small-box-footer btn-trip-submit" data-attr="@trips.TripId">More info <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                    }
+                    else
+                    {
+                        <div class="col-lg-3 col-xs-6 disabled">
+                            <!-- small box -->
+                            <div class="small-box bg-red">
+                                <div class="inner">
+                                    <h3>@trips.Title</h3>
+                                    <p>From <b>@trips.StartDate</b> To <b>@trips.EndDate</b>.</p>
+                                    <p>Trip Ends</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-bag"></i>
+                                </div>
+                                <a href="#" class="small-box-footer btn-trip-finished" data-attr="@trips.TripId">More info <i class="fa fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                    }
+                }
+               
+                
+
+            }
+
+        </div>
+    </section>
+</div>
+@section scripts {
+    <script src="~/Scripts/TripExpense/TripHistory.js"></script>
+}

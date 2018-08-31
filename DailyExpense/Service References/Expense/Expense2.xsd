@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Classes" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Classes" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Product" nillable="true" type="tns:Product" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProduct" nillable="true" type="tns:ArrayOfProduct" />
+  <xs:complexType name="Product">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Product" nillable="true" type="tns:Product" />
+  <xs:complexType name="PersonelExpense">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" type="xs:float" />
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:ArrayOfProduct" />
+      <xs:element minOccurs="0" name="ProductId" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PersonelExpense" nillable="true" type="tns:PersonelExpense" />
+  <xs:complexType name="ArrayOfExpenseData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExpenseData" nillable="true" type="tns:ExpenseData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExpenseData" nillable="true" type="tns:ArrayOfExpenseData" />
+  <xs:complexType name="ExpenseData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" type="xs:float" />
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExpenseData" nillable="true" type="tns:ExpenseData" />
+  <xs:complexType name="ArrayOfChartData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ChartData" nillable="true" type="tns:ChartData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfChartData" nillable="true" type="tns:ArrayOfChartData" />
+  <xs:complexType name="ChartData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ChartData" nillable="true" type="tns:ChartData" />
+  <xs:complexType name="ArrayOfFriendList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FriendList" nillable="true" type="tns:FriendList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFriendList" nillable="true" type="tns:ArrayOfFriendList" />
+  <xs:complexType name="FriendList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" type="xs:double" />
+      <xs:element minOccurs="0" name="EmailId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="picture" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FriendList" nillable="true" type="tns:FriendList" />
+  <xs:complexType name="TripDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" type="xs:double" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmailId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FriendList" nillable="true" type="tns:ArrayOfFriendList" />
+      <xs:element minOccurs="0" name="FriendsId" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TripId" type="xs:int" />
+      <xs:element minOccurs="0" name="TripTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserId" type="xs:int" />
+      <xs:element minOccurs="0" name="dates" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="friendsListId" type="xs:int" />
+      <xs:element minOccurs="0" name="fromDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="itemName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="toDate" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TripDetails" nillable="true" type="tns:TripDetails" />
+  <xs:complexType name="SaveTripExpense">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" type="xs:int" />
+      <xs:element minOccurs="0" name="Dates" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExpenseOnId" type="xs:int" />
+      <xs:element minOccurs="0" name="FriendList" nillable="true" type="tns:ArrayOfTripFriends" />
+      <xs:element minOccurs="0" name="GetFriends" nillable="true" type="tns:ArrayOfFriendList" />
+      <xs:element minOccurs="0" name="TripItems" nillable="true" type="tns:ArrayOfTripExpenseItem" />
+      <xs:element minOccurs="0" name="UserId" type="xs:int" />
+      <xs:element minOccurs="0" name="friendId" type="xs:int" />
+      <xs:element minOccurs="0" name="friendsListId" type="xs:int" />
+      <xs:element minOccurs="0" name="tripExpbyTotal" nillable="true" type="tns:ArrayOfTripDetails" />
+      <xs:element minOccurs="0" name="tripExpbyUser" nillable="true" type="tns:ArrayOfTripDetails" />
+      <xs:element minOccurs="0" name="tripId" type="xs:int" />
+      <xs:element minOccurs="0" name="tripItemListId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SaveTripExpense" nillable="true" type="tns:SaveTripExpense" />
+  <xs:complexType name="ArrayOfTripFriends">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TripFriends" nillable="true" type="tns:TripFriends" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTripFriends" nillable="true" type="tns:ArrayOfTripFriends" />
+  <xs:complexType name="TripFriends">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EmailId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TripFriends" nillable="true" type="tns:TripFriends" />
+  <xs:complexType name="ArrayOfTripExpenseItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TripExpenseItem" nillable="true" type="tns:TripExpenseItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTripExpenseItem" nillable="true" type="tns:ArrayOfTripExpenseItem" />
+  <xs:complexType name="TripExpenseItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TripExpenseItem" nillable="true" type="tns:TripExpenseItem" />
+  <xs:complexType name="ArrayOfTripDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TripDetails" nillable="true" type="tns:TripDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTripDetails" nillable="true" type="tns:ArrayOfTripDetails" />
+  <xs:complexType name="ArrayOfTripHistoryList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TripHistoryList" nillable="true" type="tns:TripHistoryList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTripHistoryList" nillable="true" type="tns:ArrayOfTripHistoryList" />
+  <xs:complexType name="TripHistoryList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedOn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmailId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Friends" nillable="true" type="tns:ArrayOfFriends" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TripId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TripHistoryList" nillable="true" type="tns:TripHistoryList" />
+  <xs:complexType name="ArrayOfFriends">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Friends" nillable="true" type="tns:Friends" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFriends" nillable="true" type="tns:ArrayOfFriends" />
+  <xs:complexType name="Friends">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EmailId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Friends" nillable="true" type="tns:Friends" />
+  <xs:complexType name="ArrayOfUserList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserList" nillable="true" type="tns:UserList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserList" nillable="true" type="tns:ArrayOfUserList" />
+  <xs:complexType name="UserList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TripId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserList" nillable="true" type="tns:UserList" />
+</xs:schema>

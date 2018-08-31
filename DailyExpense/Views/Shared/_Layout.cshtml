@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/AdminLTE/AdminLTE.css" rel="stylesheet" />
+    <link href="~/Content/AdminLTE/blue.css" rel="stylesheet" />
+    <link href="~/Content/AdminLTE/bootstrap.css" rel="stylesheet" />
+    @*<link href="~/Content/AdminLTE/bootstrap.min.css" rel="stylesheet" />*@
+    <link href="~/Content/AdminLTE/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/AdminLTE/ionicons.min.css" rel="stylesheet" />
+    <link href="~/Content/AdminLTE/_all-skins.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <style>
+        .nav-bar {
+            padding: 15px;
+        }
+       
+
+        .logo-lg {
+            font-size: 20px;
+        }
+    </style>
+    @*<link href='https://fonts.googleapis.com/css?family=Lato:400,700,300|Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
+        <link href="~/Content/Common/Common.css" rel="stylesheet" />
+        <link href="~/Content/Common/bootstrap.min.css" rel="stylesheet" />
+        <link href="~/Content/Common/font-awesome.min.css" rel="stylesheet" />*@
+</head>
+<body class="hold-transition skin-blue fixed sidebar-mini">
+    <div id="preloader"><div class="spinner-sm spinner-sm-1" id="status"> </div></div>
+    <header>
+        <nav class="nav navbar-default nav-bar">
+            <span></span>
+            <span class="logo-lg"><b>Daily</b>Expense</span>
+            <ul class="nav navbar-nav">
+                <li></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+    @* ------------------common pop up--------------------------------------- *@
+    @*<div class="modal fade" id="modalCommon">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p id="commonMsg"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+    @* ----------------------------------------------------------- *@
+    @* -------------------------------Notification Model--------------------------------- *@
+    @*<div class="modal fade" id="modalNotification">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">NOTIFICATIONS</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        @if (Session["UserId"] != null)
+                        {
+                            <p>Hi @(Session["UserName"].ToString())</p>
+                            var notify = (Session["Notifications"] as List<Classes.Notification>);
+                            if (notify.Count != 0)
+                            {
+                                foreach (var nots in (Session["Notifications"] as List<Classes.Notification>))
+                                {
+                                    <p id="notificationMsg">@(nots.friendUserName) (@(nots.friendEmailId)) send to you Friend Request on @(nots.requestDate).</p>
+                                    <button type="button" class="btn btn-secondary acceptBtn" id="btnAcceptRequest" data-value="@(nots.notificationId)">ACCEPT</button>
+                                    <button type="button" class="btn btn-secondary rejectBtn" id="btnRejectRequest" data-value="@(nots.notificationId)" data-attr="HomePage.cshtml">REJECT</button>
+                                }
+
+                            }
+                            else
+                            {
+                                <p id="notificationMsg">You have no message.</p>
+                            }
+
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>*@
+    @* --------------------------------------------------------------------------------------- *@
+    @*<header class="main-header" id="header">
+        <div class="bg-color">*@
+    <!--nav-->
+    @*<nav class="nav navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="col-md-12">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mynavbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="fa fa-bars"></span>
+                        </button>
+                        <a href="../Home/SignIn" class="navbar-brand">DAILY EXPENSE</a>
+                    </div>
+                    <div class="collapse navbar-collapse navbar-right" id="mynavbar">
+                        @if (Session["UserId"] != null)
+                        {
+                            <ul class="nav navbar-nav">
+                                <li class="notification" data-toggle="modal" data-target="#modalNotification"><i class="glyphicon glyphicon-envelope" style="font-size:24px;"><span class="badge badge-notify" id="notifiCount">@(Session["NotificationCount"].ToString())</span></i></li>
+                                <li class="home"><a href="../Home/HomePage">Home</a></li>
+
+                            </ul>
+                            <div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                                    @(Session["UserName"].ToString())
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">CHANGE PASSWORD</a></li>
+                                    <li><a href="../Expense/TripHistory">TRIP HISTORY</a></li>
+                                    <li><a href="../Home/SignIn">LOGOUT</a></li>
+
+                                </ul>
+                            </div>
+                        }
+                        else
+                        {
+                            <ul class="nav navbar-nav comFirst">
+                                <li><a href="#" id="comSignInUp">@ViewBag.page</a></li>
+                            </ul>
+                        }
+                    </div>
+                </div>
+            </div>
+        </nav>*@
+    @*<div class="container body-content">*@
+    @RenderBody()
+    @*</div>*@
+    @*<footer class="" id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-7 footer-copyright">
+                        © Daily Expense - All rights reserved
+
+                    </div>
+                </div>
+            </div>
+        </footer>*@
+
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="col-sm-7 footer-copyright">
+                © Daily Expense - All rights reserved
+
+            </div>
+        </div>
+    </footer>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/AdminLTE/jquery.min.js"></script>
+    <script src="~/Scripts/AdminLTE/bootstrap.min.js"></script>
+    <script src="~/Scripts/AdminLTE/jquery.slimscroll.min.js"></script>
+    <script src="~/Scripts/AdminLTE/fastclick.js"></script>
+    <script src="~/Scripts/AdminLTE/adminlte.min.js"></script>
+    <script src="~/Scripts/Common/Common.js"></script>
+       @* <script src="~/Scripts/Common/jquery-3.1.2.js"></script>
+    <script src="~/Scripts/Common/bootstrap.min.js"></script>
+    <script src="~/Scripts/Common/jquery.min.js"></script>
+    <script src="~/Scripts/Common/custom.js"></script>
+    <script src="~/Scripts/Common/wow.js"></script>
+    <script src="~/Scripts/Common/contactform.js"></script>
+    <script src="~/Scripts/Common/jquery.easing.min.js"></script>*@
+    @RenderSection("scripts", required: false)
+</body>
+</html>

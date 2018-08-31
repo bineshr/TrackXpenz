@@ -1,0 +1,69 @@
+﻿@model List<Classes.TripDetails>
+@{
+    foreach (var details in Model)
+    {
+
+
+        <div class="content-wrapper">
+            <section class="content">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="box">
+                            @*<div class="box-header">
+                                <h3 class="box-title">@details.TripTitle</h3>
+                            </div>*@
+                            <!-- /.box-header -->
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="modal fade" id="modalTripHistory">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">@details.TripTitle</h5>
+                                                    <button type="button" class="close close_historyModal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <table id="tbleViewDate" class="table table-bordered table-striped">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Name</th>
+                                                                <th>EmailId</th>
+                                                                <th>Location</th>
+                                                                <th>Total Amount</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            @foreach (var usr in details.FriendList)
+                                                            {
+                                                                <tr>
+                                                                    <td>@usr.Name</td>
+                                                                    <td>@usr.EmailId</td>
+                                                                    <td>@usr.Location</td>
+                                                                    <td>@usr.Amount</td>
+                                                                </tr>
+                                                            }
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+
+    }
+}
+<script type="text/javascript">
+    $(".close_historyModal").on('click', function () {
+        window.location = "../Expense/TripHistory";
+    });
+</script>

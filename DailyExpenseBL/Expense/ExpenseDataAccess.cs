@@ -236,20 +236,29 @@ namespace DailyExpenseBL.Expense
         }
         public List<FriendList> GetFriendsList(int UserId)
         {
-            var getFriends = from frndsList in _db.FriendsLists
-                             join usr in _db.UsersInfoes on frndsList.FriendId equals usr.Id
-                             join cntry in _db.Countries on usr.CountryId equals cntry.Id
-                             where frndsList.UserId == UserId && frndsList.Active == 2
-                             select new { usr.Id, usr.EmailId, usr.FirstName, usr.LastName, usr.Image, cntry.Name };
+            var getFriends = (from frndsList in _db.FriendsLists
+                              join usr in _db.UsersInfoes on frndsList.FriendId equals usr.Id
+                              join cntry in _db.Countries on usr.CountryId equals cntry.Id
+                              where frndsList.UserId == UserId && frndsList.Active == 2
+                              select new { usr.Id, usr.EmailId, usr.FirstName, usr.LastName, usr.Image, cntry.Name });
             var getfriendsList = new List<FriendList>();
-            getfriendsList.AddRange(getFriends.Select(a => new FriendList
+            if (getFriends != null)
             {
-                Id = a.Id,
-                Name = a.FirstName + " " + a.LastName,
-                EmailId = a.EmailId,
-                picture = (a.Image != null) ? Convert.ToBase64String(a.Image) : "",
-                Location = a.Name
-            }));
+                foreach (var friend in getFriends)
+                {
+                    var frnds = new FriendList
+                    {
+                        Id = friend.Id,
+                        EmailId = friend.EmailId,
+                        Name = friend.FirstName + " " + friend.LastName,
+                        picture = friend.Image != null ? Convert.ToBase64String(friend.Image) : null,
+                        Location = friend.Name
+                    };
+                    getfriendsList.Add(frnds);
+                }
+
+            }
+            
             return getfriendsList;
         }
         public List<FriendList> GetNonTripFriend(int UserId, int tripId)

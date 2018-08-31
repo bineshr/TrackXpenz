@@ -223,7 +223,7 @@ namespace DailyExpense.Controllers
         }
         public JsonResult GetChartByProductName()
         {
-            //AuthenticationClient authentication = new AuthenticationClient();
+           
             ExpenseClient _exp = new ExpenseClient();
             return JsonResponse(_exp.resultOverallChart(Convert.ToInt32(Session["UserId"].ToString())));
         }
